@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jsp</groupId>
+  <artifactId>hibernate_simple_jpql_query_project</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+  
+  <maven.compiler.target>15</maven.compiler.target>
+  <maven.compiler.source>15</maven.compiler.source>
+  
+  </properties>
+  
+  <name>Arpit</name>
+  <description>simple hibernate project</description>
+  
+  <dependencies>
+  
+      <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+  		<dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.0.0.Alpha8</version>
+        </dependency>
+        
+          <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.28</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+    		<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok</artifactId>
+    		<version>1.18.24</version>
+    		<scope>provided</scope>
+		</dependency>
+
+  </dependencies>
+  
+  
+</project>
