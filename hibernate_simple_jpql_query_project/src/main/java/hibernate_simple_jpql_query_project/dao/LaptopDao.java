@@ -29,4 +29,62 @@ public class LaptopDao {
 		
 		return feedback;
 	}
+	
+	// getByLaptopId------------------------------------------------------------------------------------------
+	public Laptop getByLaptopId(int laptopId) {
+		
+		String getByIdQuery = "SELECT L FROM Laptop L WHERE L.laptopId=:eid";
+		
+		Query query = entityManager.createQuery(getByIdQuery);
+		if(query != null) {
+			query.setParameter("eid", laptopId);
+			
+			Object object = query.getSingleResult();
+			
+			Laptop laptop = (Laptop) object;
+			return laptop;
+		}else {
+			return null;
+		}
+	}
+	
+	// update Laptop--------------------------------------------------------------------------------------------
+	public int updatelaptop(Laptop laptop) {
+		String updateQuery = "UPDATE Laptop L SET L.laptopName=:lname, L.laptopPrice=:lprice WHERE L.laptopId=:eid";
+		
+		Query query = entityManager.createNativeQuery(updateQuery);
+		
+		query.setParameter("eid", laptop.getLaptopId());
+		query.setParameter("lname", laptop.getLaptopName());
+		query.setParameter("lprice", laptop.getLaptopPrice());
+		
+		entityTransaction.begin();
+		int feedback = query.executeUpdate();
+		entityTransaction.commit();
+		return feedback;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

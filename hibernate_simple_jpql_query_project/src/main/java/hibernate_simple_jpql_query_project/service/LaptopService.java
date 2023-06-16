@@ -15,4 +15,21 @@ public class LaptopService {
 			System.out.println("Data not saved in database, you have passed wrong parameter");
 		}
 	}
+	
+	// getByLaptopId------------------------------------------------------------------------------------------
+	public Laptop getByLaptopId(int laptopId) {
+		return dao.getByLaptopId(laptopId);
+	}	
+	
+	// update Laptop--------------------------------------------------------------------------------------------
+	public int updatelaptop(Laptop laptop) {
+		
+		int feedback = dao.updatelaptop(laptop);
+		if(feedback == 1) {
+			System.out.println("Data updated Successfully");
+		}else {
+			System.out.println("Data not updated please check carefully");
+		}
+		return feedback;
+	}	
 }

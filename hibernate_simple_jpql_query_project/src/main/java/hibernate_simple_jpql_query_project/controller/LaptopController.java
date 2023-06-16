@@ -27,6 +27,31 @@ public class LaptopController {
 				laptopService.insertLaptop(laptop);
 			}break;
 			
+			case 2:{
+				System.out.println("Enter laptopId");
+				Laptop laptop2 = laptopService.getByLaptopId(scanner.nextInt());
+				
+				if(laptop2 != null) {
+					System.out.println("laptopId:- "+laptop2.getLaptopId());
+					System.out.println("laptopName:- "+laptop2.getLaptopName());
+					System.out.println("laptopprice:- "+laptop2.getLaptopPrice());
+					
+				}else {
+					System.out.println("laptop id is not present in database");
+				}
+			}break;
+			
+			case 3:{
+				System.out.println("Enter laptopId");
+				laptop.setLaptopId(scanner.nextInt());
+				System.out.println("Enter laptopName");
+				laptop.setLaptopName(scanner.next());
+				System.out.println("Enter laptopPrice");
+				laptop.setLaptopPrice(scanner.nextDouble());
+				
+				laptopService.updatelaptop(laptop);
+			}break;
+			
 			
 			}
 
